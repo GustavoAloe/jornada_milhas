@@ -1,0 +1,31 @@
+<section class="modal">
+    <h1 mat-dialog-title>Viajante</h1>
+    <div mat-dialog-content>
+      <div class="select-age">
+        <app-passenger-selector [formControl]="formSearchService.getControl('adults')" title="Adultos" subTitle="(Acima de 12 anos)"></app-passenger-selector>
+        <app-passenger-selector [formControl]="formSearchService.getControl('childrens')" title="Crianças" subTitle="(Entre 2 e 11 anos)"></app-passenger-selector>
+        <app-passenger-selector [formControl]="formSearchService.getControl('babies')" title="Bebês" subTitle="(Até 2 anos)"></app-passenger-selector>
+         
+      </div>
+      <div class="select-category">
+        <p><strong>Categoria</strong></p>
+        <mat-chip-listbox aria-label="Seleção de passagens">
+          <mat-chip-option 
+          value="Econômica"
+          [selected]="formSearchService.formSearch.get('type')?.value === 'Econômica'"
+          (selectionChange)="formSearchService.changeType($event, 'Econômica')"> 
+            Econômica
+          </mat-chip-option>
+          <mat-chip-option 
+          value="Executiva"
+          [selected]="formSearchService.formSearch.get('type')?.value === 'Executiva'"
+          (selectionChange)="formSearchService.changeType($event, 'Executiva')">
+            Executiva
+          </mat-chip-option>
+        </mat-chip-listbox>
+      </div>
+    </div>
+    <div mat-dialog-actions class="modal-actions">
+      <button color="primary" mat-flat-button mat-dialog-close>BUSCAR</button>
+    </div>
+  </section>

@@ -1,0 +1,7 @@
+<app-banner src="assets/imagens/banner-perfil.png" alt="Banner da tela de perfil"></app-banner>
+<app-form-base 
+    [title]="title + name"
+    [textButton]="textButton"
+    [profileComponent]="profileComponent"
+    (exit)="logout()"
+    (actionClick)="update()"></app-form-base>

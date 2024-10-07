@@ -1,0 +1,15 @@
+<ul>
+    <li>
+        <strong>{{ title }}</strong>
+    </li>
+    <li>{{ subTitle }}</li>
+    <li>
+        <app-button-control 
+        operation="decrement" 
+        (click)="decrement()"></app-button-control>
+        <span>{{ value }}</span>
+        <app-button-control 
+        operation="increment"
+        (click)="increment()"></app-button-control>
+    </li>
+</ul>
